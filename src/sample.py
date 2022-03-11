@@ -1,1 +1,1 @@
-print('sample.py is called.')
+print('sample.py is called')
