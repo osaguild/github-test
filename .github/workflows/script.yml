@@ -24,3 +24,12 @@ jobs:
       - name: Run scripts
         run: |
           python ./src/sample.py
+
+      - name: Create a pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Update sample.txt
+          title: Update sample.txt
+          labels: auto_merge
+          branch-suffix: 'short-commit-hash'
