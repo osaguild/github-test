@@ -1,2 +1,3 @@
 default sample.txt
 add line
+add line
