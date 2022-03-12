@@ -8,10 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Switch to the development branch
+      - name: Check out
         uses: actions/checkout@v2
-        with:
-          ref: develop
 
       - name: Set up Python 3.8
         uses: actions/setup-python@v2
@@ -26,3 +24,12 @@ jobs:
       - name: Run scripts
         run: |
           python ./src/sample.py
+
+      - name: Create a pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Update sample.txt
+          title: Update sample.txt
+          labels: auto_merge
+          branch-suffix: 'short-commit-hash'
