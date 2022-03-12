@@ -25,6 +25,9 @@ jobs:
         run: |
           python ./src/sample.py
 
+      - name: Check file
+        run: cat sample.txt
+
       - name: Create a pull request
         uses: peter-evans/create-pull-request@v3
         with:
