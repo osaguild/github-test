@@ -1,2 +1,2 @@
-sample:
-- src/*
+auto_merge:
+- sample.txt
